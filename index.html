@@ -4,33 +4,71 @@
     <title>My First Page</title>
     <style>
         body {
+            margin: 0;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            gap: 20px;
+            background: #eef6f8; /* calm background */
+            font-family: Arial, sans-serif;
         }
+
         h1 {
-            color: blue;
-            text-align: center;
+            color: #1e88e5;
+            white-space: nowrap;
+            animation: slideSmooth 3s ease-out forwards;
         }
+
+        /* Smooth left → right animation */
+        @keyframes slideSmooth {
+            from {
+                transform: translateX(-100vw);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        footer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
         button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 16px;
             cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #1e88e5;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
         }
     </style>
 </head>
 <body>
+
     <h1>Hello world! It's my first page</h1>
-    <button onclick="showAlert()">Click Me</button>
+
+    <footer>
+        <button onclick="showAlert()">Click Me</button>
+    </footer>
 
     <script>
         function showAlert() {
-            alert("Button clicked!");
+            alert("Success");
         }
     </script>
+
 </body>
 </html>
